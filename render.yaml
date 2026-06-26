@@ -1,0 +1,50 @@
+# Render Blueprint -- defines the backend web service.
+# Deploy via: Render Dashboard -> New -> Blueprint -> connect this repo.
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: smart-attendance-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: standard
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB_NAME
+        value: smart_attendance
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "720"
+      - key: CORS_ORIGINS
+        sync: false
+      - key: APP_ENV
+        value: production
+      - key: EAGER_LOAD_MODELS
+        value: "True"
+      - key: LIVENESS_CHECK_ENABLED
+        value: "True"
+      - key: FACE_MATCH_THRESHOLD
+        value: "0.45"
+      - key: LIVENESS_THRESHOLD
+        value: "0.60"
+      - key: FRAME_SAMPLE_RATE_FPS
+        value: "1"
+      - key: DETECTION_MIN_FACE_SIZE
+        value: "40"
+      - key: ONNX_PROVIDER
+        value: CPUExecutionProvider
+      - key: UPLOAD_DIR
+        value: app/static/uploads
+      - key: MAX_UPLOAD_SIZE_MB
+        value: "500"
+    disk:
+      name: smart-attendance-data
+      mountPath: /app/ml_models
+      sizeGB: 1
