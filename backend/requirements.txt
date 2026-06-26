@@ -1,4 +1,6 @@
-# ---- Core Backend ----
+# ============================
+# Core Backend
+# ============================
 fastapi==0.111.0
 uvicorn[standard]==0.30.1
 pydantic==2.7.4
@@ -7,41 +9,55 @@ email-validator==2.2.0
 python-multipart==0.0.9
 python-dotenv==1.0.1
 
-# ---- Auth & Security ----
+# ============================
+# Authentication & Security
+# ============================
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 bcrypt==4.1.3
 
-# ---- Database (MongoDB) ----
+# ============================
+# MongoDB
+# ============================
 motor==3.4.0
 pymongo==4.7.2
 
-# ---- Computer Vision / Face Recognition ----
-opencv-python-headless==4.10.0.84
+# ============================
+# Face Recognition
+# ============================
 numpy==1.26.4
+opencv-python-headless==4.10.0.84
 insightface==0.7.3
-onnxruntime==1.18.0
-# Use onnxruntime-gpu instead of onnxruntime if CUDA GPU is available:
-# onnxruntime-gpu==1.18.0
+onnxruntime==1.27.0
 
-# ---- Anti-Spoofing (Liveness) ----
+# ============================
+# Anti Spoofing
+# ============================
 torch==2.3.1
 torchvision==0.18.1
 
-# ---- Image / Video Processing ----
+# ============================
+# Image Processing
+# ============================
 Pillow==10.3.0
 imageio==2.34.1
 imageio-ffmpeg==0.5.1
 
-# ---- Background Jobs ----
+# ============================
+# Background Jobs
+# ============================
 celery==5.4.0
 redis==5.0.6
 
-# ---- Reporting ----
+# ============================
+# Reports
+# ============================
 openpyxl==3.1.4
 reportlab==4.2.2
 pandas==2.2.2
 
-# ---- Utilities ----
+# ============================
+# Utilities
+# ============================
 python-slugify==8.0.4
 loguru==0.7.2
