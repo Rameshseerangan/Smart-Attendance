@@ -11,18 +11,13 @@ services:
 
     buildCommand: |
       python --version
-
       pip install --upgrade pip setuptools wheel
-
       pip install torch==2.3.1 torchvision==0.18.1 --index-url https://download.pytorch.org/whl/cpu
-
       pip install -r requirements.txt
 
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
 
     envVars:
-      - key: PYTHON_VERSION
-        value: "3.10.1"
       - key: MONGO_URI
         sync: false
       - key: MONGO_DB_NAME
