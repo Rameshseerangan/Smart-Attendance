@@ -6,6 +6,8 @@ services:
   - type: web
     name: smart-attendance-backend
     runtime: docker
+    runtime: python
+    pythonVersion: 3.11.10
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     plan: standard
