@@ -7,9 +7,13 @@ services:
     name: smart-attendance
     runtime: python
 
+    pythonVersion: "3.10.1"
+
     buildCommand: |
-      pip install --upgrade pip
+      python -m pip install --upgrade pip setuptools wheel
+
       pip install torch==2.3.1 torchvision==0.18.1 --index-url https://download.pytorch.org/whl/cpu
+
       pip install -r requirements.txt
 
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
