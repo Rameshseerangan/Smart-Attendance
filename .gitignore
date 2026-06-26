@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# ML model weights (large binary files — see ml_models/README.md for download instructions)
+backend/ml_models/**/*.pth
+backend/ml_models/**/*.onnx
+!backend/ml_models/**/.gitkeep
+
+# Uploads (runtime data, not source)
+backend/app/static/uploads/*
+!backend/app/static/uploads/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
