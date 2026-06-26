@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Smart Attendance & Proxy Detection System
 
 AI-based classroom attendance automation using Face Recognition (ArcFace/InsightFace)
@@ -144,3 +145,6 @@ rates before relying on this for graded attendance.
 | Database | MongoDB Atlas | flexible schema for embeddings, scales horizontally |
 | Frontend | React + Tailwind CSS | component reuse across faculty/admin views |
 | Auth | JWT (python-jose) + bcrypt | stateless, RBAC via role claim |
+=======
+# Smart-Attendance
+>>>>>>> d8c4dad866967bad6c4b7e25135be450821d8ff9
